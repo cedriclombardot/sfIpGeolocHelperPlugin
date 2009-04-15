@@ -1,0 +1,37 @@
+# sfIpGeolocHelperPlugin 
+
+## Introduction
+
+The plugin let's you to get the localisation of your visitors by using Ip
+
+## Functions
+ * inet_aton($ip)
+ 	The inet_aton is a number caluclating from ip like that :
+ 	IP: A.B.C.D
+ 	inet_aton= A*256^3+B*256^2+C*256^1+D
+ 
+ * getCoutryByIp($ip=null)
+ 
+ 	This function return false or the country Object 
+ 	If $ip is null the function make the calcul with $_SERVER['REMOTE_ADDR']
+ 
+## Install
+
+Don't forget to load the sql file in the data/install folder
+
+Do 
+	{{{
+	mysql -u [username] -p[password] < ./plugins/sfIpGeolocHelperPlugin/data/install/country.sql
+	}}}
+And 
+{{{
+	mysql -u [username] -p[password] < ./plugins/sfIpGeolocHelperPlugin/data/install/ip2country.sql
+}}}
+
+## NOTA
+
+For Flag you must add your pictures into web/images/flag/{isocode}.png
+And after use $country->getFlag()
+
+
+	

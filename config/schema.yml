@@ -1,0 +1,18 @@
+propel:
+  _attributes:      { package: plugins.sfIpGeolocHelperPlugin.lib.model }
+#Système de géolocalisation
+  country:
+    _attributes: { phpName: country }
+    iso: { type: varchar, size: 2, required: true, primaryKey: true }
+    name:  { type: varchar, size: 80, index: unique, required: true }
+    printable_name:  { type: varchar, size: 80, index: unique, required: true }
+    iso3: { type: varchar, size: 3}
+    numcode: { type: integer }
+  
+  ip2country:
+    _attributes: { phpName: ip2country }
+    ip_from: { type: integer, size: 20, primaryKey: true }
+    ip_to: { type: integer, size: 20 }
+    country_code2: { type: varchar, size: 2, required: true, index: index } 
+    country_code3: { type: varchar, size: 2, required: true, index: index } 
+    country_name: { type: varchar, size: 50, required: true, index: index } 
