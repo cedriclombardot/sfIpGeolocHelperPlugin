@@ -9,4 +9,5 @@
  */ 
 class ip2country extends Baseip2country
 {
+
 }
